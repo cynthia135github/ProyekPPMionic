@@ -1,0 +1,54 @@
+<ion-header>
+	<ion-toolbar color="light" class="toolbarr">
+	  <ion-buttons slot="start">
+		  <ion-back-button defaultHref="homepage"></ion-back-button>
+		</ion-buttons>
+	  <ion-title><ion-icon name="document-text"></ion-icon> Lost Form Page</ion-title>
+	</ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+	  
+	  <ion-card>
+		  <ion-card-header color="danger">Lost Item Form</ion-card-header>
+		  <ion-card-content>
+		  <ion-item>
+			  <ion-label position="floating">Nama Barang: </ion-label>
+			  <ion-input type="text" [(ngModel)]="namabrg"  placeholder="Nama Barang"></ion-input>
+		  </ion-item>
+		  <ion-item>
+			  <ion-label position="floating">Deskripsi Barang: </ion-label>
+			  <ion-input type="text" [(ngModel)]="deskripsibrg"  placeholder="Warna/Ciri khusus/Merk"></ion-input>
+		  </ion-item>
+		  <ion-item>
+			  <ion-label position="floating">Perkiraan Waktu Kehilangan: </ion-label>
+			  <!--<ion-datetime displayFormat="DDDD MMM D, YYYY" value="2008-09-02"></ion-datetime>-->
+			  <ion-datetime displayFormat="YYYY/MM/DD" value="2008-09-02" [(ngModel)]="waktu" placeholder="YYYY/MM/DD"></ion-datetime>
+			  <!--<ion-input type="text" [(ngModel)]="waktu"></ion-input>-->
+		  </ion-item>
+		  <ion-item>
+			  <ion-label position="floating">Lokasi Perkiraan Hilang: </ion-label>
+			  <ion-input type="text" [(ngModel)]="lokasi"  placeholder="Lokasi"></ion-input>
+		  </ion-item>
+		   <ion-item>
+			  <ion-label position="floating">Keterangan Kehilangan: </ion-label>
+			  <ion-input type="text" [(ngModel)]="keterangan"  placeholder="Keterangan"></ion-input>
+		  </ion-item>
+		  <br>
+		  <ion-button shape="round" color="warning" expand="block" style="margin-left:10px;" (click)="addlost(namabrg, deskripsibrg, waktu, lokasi, keterangan)">Submit</ion-button>
+		  </ion-card-content>
+	  </ion-card>
+	  <br><br>
+	  
+	  <!--<div>
+		  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+			  
+				  <ion-fab-button color="dark" [routerLink]="'/home'">
+				  <ion-icon name="home-outline"></ion-icon>
+				  </ion-fab-button>
+			  
+		  </ion-fab>
+	  </div>-->
+	  
+  </ion-content>
+  

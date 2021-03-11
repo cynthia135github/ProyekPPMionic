@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="light" class="toolbarr">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="homepage"></ion-back-button>
+     </ion-buttons>
+    <ion-title>Item List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item-sliding *ngFor = "let barang of (barangcloud | async)">
+    <ion-item>
+      <ion-label>
+        <h2>{{barang.namabrg}}</h2>
+        <p>{{barang.deskripsibrg}}</p>
+      </ion-label>
+    </ion-item>
+	<ion-item-options side="start">
+		<ion-item-option color="warning" (click)="seefounder(barang.id)">
+			FOUNDER
+		</ion-item-option>
+	</ion-item-options>
+    <ion-item-options side="end">
+      <ion-item-option color="secondary" (click)="seedetail(barang.id, barang.namabrg, barang.deskripsibrg, barang.waktu, barang.lokasi, barang.phone, barang.TglDitemukan, barang.keterangan)">
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+      </ion-item-option>
+      <ion-item-option color="danger" (click)="deleteBarang(barang.id, barang.phone)">
+        <ion-icon slot="icon-only" name="close-circle-outline"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button [routerLink]="'/lostform'">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

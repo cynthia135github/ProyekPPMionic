@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="light" class="toolbarr">
+    <ion-title>
+      Welcome
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-img src="assets/image/lostfound.jpg" style="border-radius:50%!important;margin-top:20rem;overflow:hidden;"></ion-img>
+  <div>
+    <h2>WELCOME TO LOST AND FOUND NEKO</h2>
+  </div>
+  <br>
+    <ion-card>
+      <ion-card-content>
+        <div class="ion-padding">
+          <ion-button expand="block" type="submit" class="ion-no-margin"  [routerLink]="'/login'">Login</ion-button>
+        </div>
+        <div class="ion-padding">
+          <ion-button expand="block" type="submit" class="ion-no-margin" [routerLink]="'/register'">Register</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
